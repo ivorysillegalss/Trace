@@ -1,11 +1,12 @@
 package rabbitmq
 
 import (
-	"SomersaultCloud/constant/mq"
-	"SomersaultCloud/infrastructure/log"
 	"fmt"
-	amqp "github.com/rabbitmq/amqp091-go"
+	"go-quickstart/constant/mq"
+	"go-quickstart/infrastructure/log"
 	"time"
+
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 // Connection amqp.Connection wrapper

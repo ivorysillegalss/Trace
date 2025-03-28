@@ -12,7 +12,6 @@ import (
 	"go-quickstart/consume"
 	"go-quickstart/cron"
 	"go-quickstart/executor"
-	"go-quickstart/internal/tokenutil"
 	"go-quickstart/repository"
 	"go-quickstart/task"
 	"go-quickstart/usecase"
@@ -53,4 +52,4 @@ func InitializeApp() (*bootstrap.Application, error) {
 
 // wire.go:
 
-var appSet = wire.NewSet(bootstrap.NewEnv, tokenutil.NewTokenUtil, bootstrap.NewDatabases, bootstrap.NewRedisDatabase, bootstrap.NewMysqlDatabase, bootstrap.NewMongoDatabase, bootstrap.NewPoolFactory, bootstrap.NewChannel, bootstrap.NewControllers, bootstrap.NewExecutors, bootstrap.NewKafkaConf, bootstrap.NewEsEngine, bootstrap.NewSearchEngine, bootstrap.NewRabbitConnection, consume.NewMessageHandler, consume.NewTestEvent, cron.NewTestCron, executor.NewCronExecutor, executor.NewConsumeExecutor, repository.NewTestRepository, usecase.NewTestUsecase, task.NewTestTask, wire.Struct(new(bootstrap.Application), "*"))
+var appSet = wire.NewSet(bootstrap.NewEnv, bootstrap.NewDatabases, bootstrap.NewRedisDatabase, bootstrap.NewMysqlDatabase, bootstrap.NewMongoDatabase, bootstrap.NewPoolFactory, bootstrap.NewChannel, bootstrap.NewControllers, bootstrap.NewExecutors, bootstrap.NewKafkaConf, bootstrap.NewEsEngine, bootstrap.NewSearchEngine, bootstrap.NewRabbitConnection, consume.NewMessageHandler, consume.NewTestEvent, cron.NewTestCron, executor.NewCronExecutor, executor.NewConsumeExecutor, repository.NewTestRepository, usecase.NewTestUsecase, task.NewTestTask, wire.Struct(new(bootstrap.Application), "*"))
