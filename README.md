@@ -1,19 +1,5 @@
-# go-quickstart
+# Go服务分布式链路追踪系统的试实现
 
-结合**DDD&整洁架构&责任链**构建的go项目开发基础框架
+系统设计思路详见 ![SystemDesign](http://124.71.78.67/2025/03/16/Go%E6%9C%8D%E5%8A%A1%E5%88%86%E5%B8%83%E5%BC%8F%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/)
 
-### 涉及到：
-- Kafka
-- RabbitMQ
-- Redis (封装LRU)
-- MySQL
-- Mongo
-- Elastic Search
-- Hive (TBD)
-- gRpc (TBD)
-
-### 责任链：
-核心代码于`api/middleware/taskchain/core.go`下
-使用方法：继承此目录下`TaskContextData`接口，自定义链子业务流程中所需数据，task包内定义责任链节点（具体实现的任务），实现应用即可
-
-PS:所有配置目前仅适用于单机，集群相关TBD。
+目前是思考能否在这个基础上堆些东西 例如MapReduce之类的
