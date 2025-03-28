@@ -31,7 +31,11 @@ type Message struct {
 // 接口只有两个 查询数据和新增数据
 type MesssageService interface {
 	// 可以根据多种查询条件进行查询
-	searchMessage(args ...any)
+	SearchMessage(args ...any)
 	// 增加全量数据
-	insertMessage(reqMessage *Message)
+	InsertMessage(reqMessage *Message)
+}
+
+type MessageRepository interface {
+	InsertMessage(reqMessage *Message) bool
 }
